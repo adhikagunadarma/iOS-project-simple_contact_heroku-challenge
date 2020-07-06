@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ListViewController.swift
 //  simple-crud-contact-jenius
 //
 //  Created by Josephine Fransisca on 06/07/20.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ListViewController: UIViewController {
+    @IBOutlet weak var addNewContact: UIBarButtonItem!
+    @IBOutlet weak var contactTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    
 }
-
