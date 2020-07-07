@@ -5,6 +5,7 @@ target 'simple-crud-contact-jenius' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
+    pod 'Alamofire'
   # Pods for simple-crud-contact-jenius
 
 end

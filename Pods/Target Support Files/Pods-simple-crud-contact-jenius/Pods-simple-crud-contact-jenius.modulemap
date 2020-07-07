@@ -1,0 +1,6 @@
+framework module Pods_simple_crud_contact_jenius {
+  umbrella header "Pods-simple-crud-contact-jenius-umbrella.h"
+
+  export *
+  module * { export * }
+}
