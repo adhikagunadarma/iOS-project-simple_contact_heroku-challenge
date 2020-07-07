@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,6 @@
 		125AA12024B35A8B000EE108 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125AA11E24B35A8B000EE108 /* LaunchScreen.storyboard */; };
 		125AA12C24B35C85000EE108 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125AA12B24B35C85000EE108 /* ListViewController.swift */; };
 		125AA12E24B35CB2000EE108 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125AA12D24B35CB2000EE108 /* DetailViewController.swift */; };
-		125AA13224B35CD1000EE108 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125AA13124B35CD1000EE108 /* APIService.swift */; };
 		125AA13424B35CE4000EE108 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125AA13324B35CE4000EE108 /* Contact.swift */; };
 		125AA13624B35DAB000EE108 /* ContactViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125AA13524B35DAB000EE108 /* ContactViewCell.swift */; };
 		B5FE70039617C8EC8872384A /* Pods_simple_crud_contact_jenius.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C26AD2A8F6632CE82B81C /* Pods_simple_crud_contact_jenius.framework */; };
@@ -30,7 +29,6 @@
 		125AA12124B35A8B000EE108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		125AA12B24B35C85000EE108 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		125AA12D24B35CB2000EE108 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		125AA13124B35CD1000EE108 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		125AA13324B35CE4000EE108 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		125AA13524B35DAB000EE108 /* ContactViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContactViewCell.swift; path = cell/ContactViewCell.swift; sourceTree = "<group>"; };
 		274C26AD2A8F6632CE82B81C /* Pods_simple_crud_contact_jenius.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simple_crud_contact_jenius.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,7 +69,6 @@
 		125AA11224B35A88000EE108 /* simple-crud-contact-jenius */ = {
 			isa = PBXGroup;
 			children = (
-				125AA12A24B35C49000EE108 /* service */,
 				125AA12924B35C3E000EE108 /* controller */,
 				125AA12824B35C37000EE108 /* view */,
 				125AA12724B35C2C000EE108 /* model */,
@@ -110,14 +107,6 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
-		125AA12A24B35C49000EE108 /* service */ = {
-			isa = PBXGroup;
-			children = (
-				125AA13124B35CD1000EE108 /* APIService.swift */,
-			);
-			path = service;
-			sourceTree = "<group>";
-		};
 		789B8D1C19EEA92FE702765A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,7 +121,6 @@
 				D8F277FEFA7B33AEEB171F77 /* Pods-simple-crud-contact-jenius.debug.xcconfig */,
 				AAEEAB62FC27D02BA99890A1 /* Pods-simple-crud-contact-jenius.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -254,7 +242,6 @@
 				125AA11424B35A88000EE108 /* AppDelegate.swift in Sources */,
 				125AA11624B35A88000EE108 /* SceneDelegate.swift in Sources */,
 				125AA12C24B35C85000EE108 /* ListViewController.swift in Sources */,
-				125AA13224B35CD1000EE108 /* APIService.swift in Sources */,
 				125AA12E24B35CB2000EE108 /* DetailViewController.swift in Sources */,
 				125AA13424B35CE4000EE108 /* Contact.swift in Sources */,
 				125AA13624B35DAB000EE108 /* ContactViewCell.swift in Sources */,

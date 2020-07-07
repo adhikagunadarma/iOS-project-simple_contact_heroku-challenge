@@ -6,6 +6,9 @@ target 'simple-crud-contact-jenius' do
   use_frameworks!
 
     pod 'Alamofire'
+    pod 'SDWebImage', '~> 5.0'
+    pod 'JGProgressHUD'
+    pod 'SwiftyJSON'
   # Pods for simple-crud-contact-jenius
 
 end

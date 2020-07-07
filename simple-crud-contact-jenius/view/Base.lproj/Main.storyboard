@@ -10,7 +10,6 @@
         <!--Heroku Contact-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ListViewController" customModule="simple_crud_contact_jenius" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -21,14 +20,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactCell" id="cey-dC-SF2" customClass="ContactViewCell" customModule="simple_crud_contact_jenius" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="20.666666030883789"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="21"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cey-dC-SF2" id="8Hu-at-yyX">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="20.666666030883789"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAM-sy-xNh">
-                                                    <rect key="frame" x="8" y="0.0" width="398" height="20.666666666666668"/>
+                                                    <rect key="frame" x="8" y="0.0" width="398" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -43,7 +42,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameContact" destination="xAM-sy-xNh" id="Bej-RN-u4n"/>
-                                            <segue destination="unn-ZS-pGw" kind="show" id="uYP-Ep-Y9o"/>
+                                            <segue destination="unn-ZS-pGw" kind="show" identifier="goToDetailWithParams" id="uYP-Ep-Y9o"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -61,7 +60,7 @@
                     <navigationItem key="navigationItem" title="Heroku Contact" id="WnE-Uz-Cln">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="pPE-oz-ziV">
                             <connections>
-                                <segue destination="unn-ZS-pGw" kind="show" id="OUg-Be-Cbg"/>
+                                <segue destination="unn-ZS-pGw" kind="show" identifier="goToDetailWithoutParams" id="OUg-Be-Cbg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -70,6 +69,7 @@
                         <outlet property="contactTableView" destination="Avd-jM-gkS" id="hka-q9-0rz"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="117.39130434782609"/>
         </scene>
@@ -183,6 +183,6 @@
         <image name="trash" catalog="system" width="60" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uYP-Ep-Y9o"/>
+        <segue reference="OUg-Be-Cbg"/>
     </inferredMetricsTieBreakers>
 </document>
