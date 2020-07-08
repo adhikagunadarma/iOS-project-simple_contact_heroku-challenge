@@ -28,10 +28,12 @@ class ListViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        // when the view controller is shown, will fetch the new data from the API ,so it will kept us updated with any changes on the API
        self.getAllContacts()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // since there are 2 ways to access detail view controller, one with params, and the other without param to indicate whether the detail VC should call edit or add new contact api call
         let destVC : DetailViewController = segue.destination as! DetailViewController
         if (segue.identifier == "goToDetailWithParams"){
             let selectedRow = contactTableView.indexPathForSelectedRow!.row
@@ -40,6 +42,7 @@ class ListViewController: UIViewController {
     }
     
     private func getAllContacts(){
+        // api call to get all contacts
         self.contacts = []
         self.hud.show(in: self.view)
         Alamofire.request(self.baseURL + "/contact", method: .get).responseJSON { (response) in
@@ -72,6 +75,7 @@ class ListViewController: UIViewController {
     }
     
     private func presentAlert(_ messageText : String){
+        // function to present popup alert
         let alert = UIAlertController(title: "Error", message: messageText, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         self.present(alert, animated: true, completion: nil)
@@ -83,6 +87,8 @@ class ListViewController: UIViewController {
 }
 
 extension ListViewController : UITableViewDelegate, UITableViewDataSource{
+    
+    //standard tableview delegate method to be implemented
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contacts.count
     }
