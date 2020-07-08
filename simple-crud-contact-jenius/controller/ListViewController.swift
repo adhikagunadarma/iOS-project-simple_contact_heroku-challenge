@@ -13,6 +13,8 @@ import Alamofire
 import UIKit
 let reuseIdentifier = "ContactCell"
 
+
+// The code is kinda messed up, I'm trying to implement VIPER design pattern, but could not get it done due to time constraint, so I'm doing whatever I could to make the app work first.
 class ListViewController: UIViewController {
     @IBOutlet weak var addNewContact: UIBarButtonItem!
     @IBOutlet weak var contactTableView: UITableView!
