@@ -19,9 +19,11 @@ let reuseIdentifier = "ContactCell"
 class ListViewController: UIViewController {
     @IBOutlet weak var addNewContact: UIBarButtonItem!
     @IBOutlet weak var contactTableView: UITableView!
+    
     private var contacts : [Contact] = []
-    private let baseURL = "https://simple-contact-crud.herokuapp.com"
     private let hud = JGProgressHUD()
+    
+    var presenter:ListViewToPresenterProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,35 +47,9 @@ class ListViewController: UIViewController {
     }
     
     private func getAllContacts(){
-        // api call to get all contacts
         self.contacts = []
         self.hud.show(in: self.view)
-        Alamofire.request(self.baseURL + "/contact", method: .get).responseJSON { (response) in
-            
-            self.hud.dismiss()
-            if (response.result.isSuccess){
-                // fetch and convert the response into JSON
-                let resultJSON : JSON = JSON(response.result.value!)
-                guard let listDataJSON = resultJSON["data"].array else{
-                    return
-                }
-                
-                for data in listDataJSON {
-                    let contact = Contact()
-                    contact.firstName = data["firstName"].stringValue
-                    contact.lastName = data["lastName"].stringValue
-                    contact.id = data["id"].stringValue
-                    contact.age = data["age"].stringValue
-                    contact.photo = data["photo"].stringValue
-                    
-                    self.contacts.append(contact)
-                }
-                self.contactTableView.reloadData()
-                
-            }else{
-                self.presentAlert("Result not found")
-            }
-        }
+        self.presenter?.fetchListContacts()
         
     }
     
@@ -102,5 +78,20 @@ extension ListViewController : UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     
+    
+}
+
+extension ListViewController : PresenterToListViewProtocol{
+    func fetchSucceed(contacts: [Contact]) {
+        self.contacts = contacts
+        self.hud.dismiss()
+        self.contactTableView.reloadData()
+        
+    }
+    
+    func handleError() {
+        self.hud.dismiss()
+        self.presentAlert("Result not found")
+    }
     
 }
