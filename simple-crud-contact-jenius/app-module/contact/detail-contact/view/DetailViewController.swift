@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
     
     internal var id_contact : String = ""
     private let hud = JGProgressHUD()
-    private var presenter : DetailViewToPresenterProtocol?
+    internal var presenter : ViewToPresenterDetailProtocol?
     
     @IBOutlet weak var deleteButton: UIBarButtonItem!
     @IBOutlet weak var contactPhoto: UIImageView!
@@ -36,7 +36,7 @@ class DetailViewController: UIViewController {
     
     // function to submit the data contact, whether it is add a new one or edit an existing one, depends on the contact id passed to the page
     @IBAction func onSubmit(_ sender: Any) {
-        let contact = Contact()
+        let contact = DetailContact()
         contact.age = self.contactAge.text ?? ""
         contact.firstName = self.contactFirst.text ?? ""
         contact.lastName = self.contactLast.text ?? ""
@@ -63,13 +63,13 @@ class DetailViewController: UIViewController {
         self.presenter?.fetchContact(id)
     }
     
-    private func addNewContact(_ model : Contact) {
+    private func addNewContact(_ model : DetailContact) {
         // api call function to add new contact
         self.hud.show(in: self.view)
         self.presenter?.addContact(model)
     }
     
-    private func editContact(_ model : Contact, _ id : String) {
+    private func editContact(_ model : DetailContact, _ id : String) {
         // api call function to edit contact
         self.hud.show(in: self.view)
         self.presenter?.editContact(id, model)
@@ -99,7 +99,7 @@ class DetailViewController: UIViewController {
         }
     }
     
-    private func updateUI(_ contact : Contact){
+    private func updateUI(_ contact : DetailContact){
         // update the UI accordingly
         self.contactFirst.text = contact.firstName
         self.contactLast.text = contact.lastName
@@ -118,14 +118,14 @@ class DetailViewController: UIViewController {
 }
 
 
-extension DetailViewController : PresenterToDetailViewProtocol{
+extension DetailViewController : PresenterToViewDetailProtocol{
     func showSuccessMessage(_ message: String) {
          self.hud.dismiss()
          self.presentAlert(message)
     }
     
     
-    func fetchSucceed(contact: Contact) {
+    func fetchSucceed(contact: DetailContact) {
         self.hud.dismiss()
         self.updateUI(contact)
     }

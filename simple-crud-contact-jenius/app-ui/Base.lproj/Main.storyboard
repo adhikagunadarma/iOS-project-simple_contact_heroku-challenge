@@ -10,7 +10,7 @@
         <!--Heroku Contact-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ListViewController" customModule="simple_crud_contact_jenius" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ListViewController" storyboardIdentifier="ListViewController" id="BYZ-38-t0r" customClass="ListViewController" customModule="simple_crud_contact_jenius" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,6 +79,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Ytc-ln-4E9">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Nj-EY-yBF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TMc-of-3La" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uCC-gS-80E">
@@ -90,14 +91,13 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Csc-3A-2zz"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Nj-EY-yBF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.40000000000001" y="117.39130434782609"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="r31-Hf-EWQ">
             <objects>
-                <viewController id="unn-ZS-pGw" customClass="DetailViewController" customModule="simple_crud_contact_jenius" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="DetailViewController" storyboardIdentifier="DetailViewController" id="unn-ZS-pGw" customClass="DetailViewController" customModule="simple_crud_contact_jenius" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lnw-3h-33w">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

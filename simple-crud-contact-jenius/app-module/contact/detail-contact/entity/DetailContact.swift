@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Contact {
+class DetailContact {
     var id : String = ""
     var firstName : String = ""
     var lastName : String = ""

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1222663924BF4E3600D3C7BB /* ListContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222663824BF4E3600D3C7BB /* ListContact.swift */; };
+		1222663B24BF4E4C00D3C7BB /* ListContactInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222663A24BF4E4C00D3C7BB /* ListContactInteractor.swift */; };
+		1222663D24BF4E5900D3C7BB /* ListContactPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222663C24BF4E5900D3C7BB /* ListContactPresenter.swift */; };
+		1222663F24BF4E6600D3C7BB /* ListContactProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222663E24BF4E6600D3C7BB /* ListContactProtocol.swift */; };
+		1222664124BF4E7200D3C7BB /* ListContactRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222664024BF4E7200D3C7BB /* ListContactRouter.swift */; };
 		125AA11424B35A88000EE108 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125AA11324B35A88000EE108 /* AppDelegate.swift */; };
 		125AA11624B35A88000EE108 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125AA11524B35A88000EE108 /* SceneDelegate.swift */; };
 		125AA11B24B35A88000EE108 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125AA11924B35A88000EE108 /* Main.storyboard */; };
@@ -14,16 +19,21 @@
 		125AA12024B35A8B000EE108 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125AA11E24B35A8B000EE108 /* LaunchScreen.storyboard */; };
 		125AA12C24B35C85000EE108 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125AA12B24B35C85000EE108 /* ListViewController.swift */; };
 		125AA12E24B35CB2000EE108 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125AA12D24B35CB2000EE108 /* DetailViewController.swift */; };
-		125AA13424B35CE4000EE108 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125AA13324B35CE4000EE108 /* Contact.swift */; };
+		125AA13424B35CE4000EE108 /* DetailContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125AA13324B35CE4000EE108 /* DetailContact.swift */; };
 		125AA13624B35DAB000EE108 /* ContactViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125AA13524B35DAB000EE108 /* ContactViewCell.swift */; };
-		12B9FF2424B760DB0042B17C /* ContactPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B9FF2324B760DB0042B17C /* ContactPresenter.swift */; };
-		12B9FF2624B760ED0042B17C /* ContactProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B9FF2524B760ED0042B17C /* ContactProtocol.swift */; };
-		12B9FF2824B761000042B17C /* ContactInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B9FF2724B761000042B17C /* ContactInteractor.swift */; };
-		12B9FF2A24B7610C0042B17C /* ContactRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B9FF2924B7610C0042B17C /* ContactRouter.swift */; };
+		12B9FF2424B760DB0042B17C /* DetailContactPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B9FF2324B760DB0042B17C /* DetailContactPresenter.swift */; };
+		12B9FF2624B760ED0042B17C /* DetailContactProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B9FF2524B760ED0042B17C /* DetailContactProtocol.swift */; };
+		12B9FF2824B761000042B17C /* DetailContactInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B9FF2724B761000042B17C /* DetailContactInteractor.swift */; };
+		12B9FF2A24B7610C0042B17C /* DetailContactRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B9FF2924B7610C0042B17C /* DetailContactRouter.swift */; };
 		B5FE70039617C8EC8872384A /* Pods_simple_crud_contact_jenius.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C26AD2A8F6632CE82B81C /* Pods_simple_crud_contact_jenius.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1222663824BF4E3600D3C7BB /* ListContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContact.swift; sourceTree = "<group>"; };
+		1222663A24BF4E4C00D3C7BB /* ListContactInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContactInteractor.swift; sourceTree = "<group>"; };
+		1222663C24BF4E5900D3C7BB /* ListContactPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContactPresenter.swift; sourceTree = "<group>"; };
+		1222663E24BF4E6600D3C7BB /* ListContactProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContactProtocol.swift; sourceTree = "<group>"; };
+		1222664024BF4E7200D3C7BB /* ListContactRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContactRouter.swift; sourceTree = "<group>"; };
 		125AA11024B35A88000EE108 /* simple-crud-contact-jenius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "simple-crud-contact-jenius.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		125AA11324B35A88000EE108 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		125AA11524B35A88000EE108 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,12 +43,12 @@
 		125AA12124B35A8B000EE108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		125AA12B24B35C85000EE108 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		125AA12D24B35CB2000EE108 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		125AA13324B35CE4000EE108 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		125AA13324B35CE4000EE108 /* DetailContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContact.swift; sourceTree = "<group>"; };
 		125AA13524B35DAB000EE108 /* ContactViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewCell.swift; sourceTree = "<group>"; };
-		12B9FF2324B760DB0042B17C /* ContactPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPresenter.swift; sourceTree = "<group>"; };
-		12B9FF2524B760ED0042B17C /* ContactProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactProtocol.swift; sourceTree = "<group>"; };
-		12B9FF2724B761000042B17C /* ContactInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInteractor.swift; sourceTree = "<group>"; };
-		12B9FF2924B7610C0042B17C /* ContactRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRouter.swift; sourceTree = "<group>"; };
+		12B9FF2324B760DB0042B17C /* DetailContactPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContactPresenter.swift; sourceTree = "<group>"; };
+		12B9FF2524B760ED0042B17C /* DetailContactProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContactProtocol.swift; sourceTree = "<group>"; };
+		12B9FF2724B761000042B17C /* DetailContactInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContactInteractor.swift; sourceTree = "<group>"; };
+		12B9FF2924B7610C0042B17C /* DetailContactRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContactRouter.swift; sourceTree = "<group>"; };
 		274C26AD2A8F6632CE82B81C /* Pods_simple_crud_contact_jenius.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simple_crud_contact_jenius.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEEAB62FC27D02BA99890A1 /* Pods-simple-crud-contact-jenius.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-crud-contact-jenius.release.xcconfig"; path = "Target Support Files/Pods-simple-crud-contact-jenius/Pods-simple-crud-contact-jenius.release.xcconfig"; sourceTree = "<group>"; };
 		D8F277FEFA7B33AEEB171F77 /* Pods-simple-crud-contact-jenius.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-crud-contact-jenius.debug.xcconfig"; path = "Target Support Files/Pods-simple-crud-contact-jenius/Pods-simple-crud-contact-jenius.debug.xcconfig"; sourceTree = "<group>"; };
@@ -56,6 +66,116 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1222662E24BF45C200D3C7BB /* app-module */ = {
+			isa = PBXGroup;
+			children = (
+				125AA11324B35A88000EE108 /* AppDelegate.swift */,
+				125AA11524B35A88000EE108 /* SceneDelegate.swift */,
+				1222662F24BF45D000D3C7BB /* contact */,
+			);
+			path = "app-module";
+			sourceTree = "<group>";
+		};
+		1222662F24BF45D000D3C7BB /* contact */ = {
+			isa = PBXGroup;
+			children = (
+				1222663124BF4BBC00D3C7BB /* detail-contact */,
+				1222663024BF4BB100D3C7BB /* list-contact */,
+			);
+			path = contact;
+			sourceTree = "<group>";
+		};
+		1222663024BF4BB100D3C7BB /* list-contact */ = {
+			isa = PBXGroup;
+			children = (
+				12B9FF2224B75BC30042B17C /* entity */,
+				12B9FF1E24B75B940042B17C /* interactor */,
+				12B9FF2124B75BBF0042B17C /* presenter */,
+				12B9FF2024B75BB70042B17C /* protocol */,
+				12B9FF1F24B75BA40042B17C /* route */,
+				125AA12824B35C37000EE108 /* view */,
+			);
+			path = "list-contact";
+			sourceTree = "<group>";
+		};
+		1222663124BF4BBC00D3C7BB /* detail-contact */ = {
+			isa = PBXGroup;
+			children = (
+				1222663224BF4BDC00D3C7BB /* entity */,
+				1222663624BF4C0600D3C7BB /* interactor */,
+				1222663324BF4BE200D3C7BB /* presenter */,
+				1222663424BF4BF900D3C7BB /* protocol */,
+				1222663724BF4C1600D3C7BB /* router */,
+				1222663524BF4C0200D3C7BB /* view */,
+			);
+			path = "detail-contact";
+			sourceTree = "<group>";
+		};
+		1222663224BF4BDC00D3C7BB /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				125AA13324B35CE4000EE108 /* DetailContact.swift */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		1222663324BF4BE200D3C7BB /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				12B9FF2324B760DB0042B17C /* DetailContactPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		1222663424BF4BF900D3C7BB /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				12B9FF2524B760ED0042B17C /* DetailContactProtocol.swift */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
+		1222663524BF4C0200D3C7BB /* view */ = {
+			isa = PBXGroup;
+			children = (
+				125AA12D24B35CB2000EE108 /* DetailViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		1222663624BF4C0600D3C7BB /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				12B9FF2724B761000042B17C /* DetailContactInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		1222663724BF4C1600D3C7BB /* router */ = {
+			isa = PBXGroup;
+			children = (
+				12B9FF2924B7610C0042B17C /* DetailContactRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		1223D05624C09CB500BC16A6 /* app-ui */ = {
+			isa = PBXGroup;
+			children = (
+				125AA11E24B35A8B000EE108 /* LaunchScreen.storyboard */,
+				125AA11924B35A88000EE108 /* Main.storyboard */,
+			);
+			path = "app-ui";
+			sourceTree = "<group>";
+		};
+		1223D05724C09CBC00BC16A6 /* app-assets */ = {
+			isa = PBXGroup;
+			children = (
+				125AA11C24B35A8B000EE108 /* Assets.xcassets */,
+			);
+			path = "app-assets";
+			sourceTree = "<group>";
+		};
 		125AA10724B35A88000EE108 = {
 			isa = PBXGroup;
 			children = (
@@ -77,18 +197,10 @@
 		125AA11224B35A88000EE108 /* simple-crud-contact-jenius */ = {
 			isa = PBXGroup;
 			children = (
-				125AA11E24B35A8B000EE108 /* LaunchScreen.storyboard */,
-				125AA11924B35A88000EE108 /* Main.storyboard */,
-				12B9FF2224B75BC30042B17C /* entity */,
-				12B9FF2124B75BBF0042B17C /* presenter */,
-				12B9FF2024B75BB70042B17C /* protocol */,
-				12B9FF1F24B75BA40042B17C /* route */,
-				12B9FF1E24B75B940042B17C /* interactor */,
-				125AA12824B35C37000EE108 /* view */,
-				125AA11324B35A88000EE108 /* AppDelegate.swift */,
-				125AA11524B35A88000EE108 /* SceneDelegate.swift */,
-				125AA11C24B35A8B000EE108 /* Assets.xcassets */,
 				125AA12124B35A8B000EE108 /* Info.plist */,
+				1223D05724C09CBC00BC16A6 /* app-assets */,
+				1223D05624C09CB500BC16A6 /* app-ui */,
+				1222662E24BF45C200D3C7BB /* app-module */,
 			);
 			path = "simple-crud-contact-jenius";
 			sourceTree = "<group>";
@@ -97,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				125AA12B24B35C85000EE108 /* ListViewController.swift */,
-				125AA12D24B35CB2000EE108 /* DetailViewController.swift */,
 				125AA13524B35DAB000EE108 /* ContactViewCell.swift */,
 			);
 			path = view;
@@ -106,7 +217,7 @@
 		12B9FF1E24B75B940042B17C /* interactor */ = {
 			isa = PBXGroup;
 			children = (
-				12B9FF2724B761000042B17C /* ContactInteractor.swift */,
+				1222663A24BF4E4C00D3C7BB /* ListContactInteractor.swift */,
 			);
 			path = interactor;
 			sourceTree = "<group>";
@@ -114,7 +225,7 @@
 		12B9FF1F24B75BA40042B17C /* route */ = {
 			isa = PBXGroup;
 			children = (
-				12B9FF2924B7610C0042B17C /* ContactRouter.swift */,
+				1222664024BF4E7200D3C7BB /* ListContactRouter.swift */,
 			);
 			path = route;
 			sourceTree = "<group>";
@@ -122,7 +233,7 @@
 		12B9FF2024B75BB70042B17C /* protocol */ = {
 			isa = PBXGroup;
 			children = (
-				12B9FF2524B760ED0042B17C /* ContactProtocol.swift */,
+				1222663E24BF4E6600D3C7BB /* ListContactProtocol.swift */,
 			);
 			path = protocol;
 			sourceTree = "<group>";
@@ -130,7 +241,7 @@
 		12B9FF2124B75BBF0042B17C /* presenter */ = {
 			isa = PBXGroup;
 			children = (
-				12B9FF2324B760DB0042B17C /* ContactPresenter.swift */,
+				1222663C24BF4E5900D3C7BB /* ListContactPresenter.swift */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -138,7 +249,7 @@
 		12B9FF2224B75BC30042B17C /* entity */ = {
 			isa = PBXGroup;
 			children = (
-				125AA13324B35CE4000EE108 /* Contact.swift */,
+				1222663824BF4E3600D3C7BB /* ListContact.swift */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -276,15 +387,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				125AA11424B35A88000EE108 /* AppDelegate.swift in Sources */,
+				1222663B24BF4E4C00D3C7BB /* ListContactInteractor.swift in Sources */,
 				125AA11624B35A88000EE108 /* SceneDelegate.swift in Sources */,
+				1222664124BF4E7200D3C7BB /* ListContactRouter.swift in Sources */,
 				125AA12C24B35C85000EE108 /* ListViewController.swift in Sources */,
-				12B9FF2424B760DB0042B17C /* ContactPresenter.swift in Sources */,
+				12B9FF2424B760DB0042B17C /* DetailContactPresenter.swift in Sources */,
 				125AA12E24B35CB2000EE108 /* DetailViewController.swift in Sources */,
-				125AA13424B35CE4000EE108 /* Contact.swift in Sources */,
-				12B9FF2624B760ED0042B17C /* ContactProtocol.swift in Sources */,
+				1222663F24BF4E6600D3C7BB /* ListContactProtocol.swift in Sources */,
+				125AA13424B35CE4000EE108 /* DetailContact.swift in Sources */,
+				12B9FF2624B760ED0042B17C /* DetailContactProtocol.swift in Sources */,
+				1222663D24BF4E5900D3C7BB /* ListContactPresenter.swift in Sources */,
 				125AA13624B35DAB000EE108 /* ContactViewCell.swift in Sources */,
-				12B9FF2824B761000042B17C /* ContactInteractor.swift in Sources */,
-				12B9FF2A24B7610C0042B17C /* ContactRouter.swift in Sources */,
+				1222663924BF4E3600D3C7BB /* ListContact.swift in Sources */,
+				12B9FF2824B761000042B17C /* DetailContactInteractor.swift in Sources */,
+				12B9FF2A24B7610C0042B17C /* DetailContactRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

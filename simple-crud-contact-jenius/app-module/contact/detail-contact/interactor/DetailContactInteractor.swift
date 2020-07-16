@@ -11,36 +11,10 @@ import Foundation
 import SwiftyJSON
 import Alamofire
 
-class ContactInteractor {
-    var presenter : InteractorToPresenterProtocol?
+class DetailContactInteractor : PresenterToInteractorDetailProtocol {
+    var presenter : InteractorToPresenterDetailProtocol?
     private let baseURL = "https://simple-contact-crud.herokuapp.com"
     
-    internal func getAllContacts(){
-        var contacts : [Contact] = []
-        Alamofire.request(self.baseURL + "/contact", method: .get).responseJSON { (response) in
-            
-            if (response.response?.statusCode == 200){
-                // fetch and convert the response into JSON
-                let resultJSON : JSON = JSON(response.result.value!)
-                guard let listDataJSON = resultJSON["data"].array else{
-                    return
-                }
-                
-                for data in listDataJSON {
-                    let contact = Contact()
-                    contact.firstName = data["firstName"].stringValue
-                    contact.lastName = data["lastName"].stringValue
-                    contact.id = data["id"].stringValue
-                    contact.age = data["age"].stringValue
-                    contact.photo = data["photo"].stringValue
-                    contacts.append(contact)
-                }
-                self.presenter?.listContactFetchSuccess(contacts)
-            }else{
-                self.presenter?.listContactFetchFailed()
-            }
-        }
-    }
     
     func getContact(_ id : String){
         Alamofire.request(self.baseURL + "/contact/\(id)", method: .get).responseJSON { (response) in
@@ -48,7 +22,7 @@ class ContactInteractor {
             if (response.response?.statusCode == 200){
                 // fetch and convert the response into JSON
                 let resultJSON : JSON = JSON(response.result.value!)
-                let contact = Contact()
+                let contact = DetailContact()
                 contact.firstName = resultJSON["data"]["firstName"].stringValue
                 contact.lastName = resultJSON["data"]["lastName"].stringValue
                 contact.id = resultJSON["data"]["id"].stringValue
@@ -63,7 +37,7 @@ class ContactInteractor {
     }
     
     
-    func addNewContact(_ contact : Contact){
+    func addContact(_ contact : DetailContact){
         Alamofire.request(self.baseURL + "/contact",
                           method: .post,
                           parameters: self.toJSON(contact).dictionaryObject,
@@ -80,7 +54,7 @@ class ContactInteractor {
         }
     }
     
-    func editContact(_ id : String, _ contact : Contact){
+    func editContact(_ id : String, _ contact : DetailContact){
         Alamofire.request(self.baseURL + "/contact/\(id)",
             method: .put,
             parameters: self.toJSON(contact).dictionaryObject,
@@ -113,7 +87,7 @@ class ContactInteractor {
         }
     }
     
-    private func toJSON(_ contact : Contact) -> JSON {
+    private func toJSON(_ contact : DetailContact) -> JSON {
         // function to convert model into json because Alamofire only support json type of params
         return [
             "firstName": contact.firstName as Any,

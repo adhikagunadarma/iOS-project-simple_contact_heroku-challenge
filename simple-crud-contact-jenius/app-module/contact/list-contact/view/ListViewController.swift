@@ -20,21 +20,27 @@ class ListViewController: UIViewController {
     @IBOutlet weak var addNewContact: UIBarButtonItem!
     @IBOutlet weak var contactTableView: UITableView!
     
-    private var contacts : [Contact] = []
+    private var contacts : [DetailContact] = []
     private let hud = JGProgressHUD()
     
-    var presenter:ListViewToPresenterProtocol?
+    internal var presenter : ViewToPresenterListProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         self.contactTableView.delegate = self
         self.contactTableView.dataSource = self
         
     }
     
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         // when the view controller is shown, will fetch the new data from the API ,so it will kept us updated with any changes on the API
-       self.getAllContacts()
+        self.getAllContacts()
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -50,6 +56,7 @@ class ListViewController: UIViewController {
         self.contacts = []
         self.hud.show(in: self.view)
         self.presenter?.fetchListContacts()
+        print("asd")
         
     }
     
@@ -81,8 +88,8 @@ extension ListViewController : UITableViewDelegate, UITableViewDataSource{
     
 }
 
-extension ListViewController : PresenterToListViewProtocol{
-    func fetchSucceed(contacts: [Contact]) {
+extension ListViewController : PresenterToViewListProtocol{
+    func fetchSucceed(contacts: [DetailContact]) {
         self.contacts = contacts
         self.hud.dismiss()
         self.contactTableView.reloadData()
