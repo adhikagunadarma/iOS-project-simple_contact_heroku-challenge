@@ -28,6 +28,7 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.getAllContacts()
         
         self.contactTableView.delegate = self
         self.contactTableView.dataSource = self
@@ -39,7 +40,7 @@ class ListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         // when the view controller is shown, will fetch the new data from the API ,so it will kept us updated with any changes on the API
-        self.getAllContacts()
+        
 
     }
     
