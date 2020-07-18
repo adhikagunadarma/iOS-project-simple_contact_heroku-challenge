@@ -94,7 +94,7 @@ extension ListViewController : PresenterToViewListProtocol{
         self.contacts = contacts
         self.hud.dismiss()
         self.contactTableView.reloadData()
-        
+        print("done")
     }
     
     func handleError() {
