@@ -9,7 +9,8 @@ target 'simple-crud-contact-jenius' do
     pod 'SDWebImage', '~> 5.0' # to Access Image from URL
     pod 'JGProgressHUD' # To make progress loading indicator
     pod 'SwiftyJSON' # To Convert Json for API call easier
-    
+    pod 'RxSwift',  '~> 5.0'
+    pod 'RxCocoa',  '~> 5.0'
   # Pods for simple-crud-contact-jenius
 
 end

@@ -16,7 +16,7 @@
 		125AA12E24B35CB2000EE108 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125AA12D24B35CB2000EE108 /* DetailViewController.swift */; };
 		125AA13424B35CE4000EE108 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125AA13324B35CE4000EE108 /* Contact.swift */; };
 		125AA13624B35DAB000EE108 /* ContactViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125AA13524B35DAB000EE108 /* ContactViewCell.swift */; };
-		1276828C24C2BE1800DB55B0 /* ListViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1276828B24C2BE1800DB55B0 /* ListViewPresenter.swift */; };
+		1276828C24C2BE1800DB55B0 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1276828B24C2BE1800DB55B0 /* ListViewModel.swift */; };
 		1276828E24C2BE2900DB55B0 /* DetailViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1276828D24C2BE2900DB55B0 /* DetailViewPresenter.swift */; };
 		B5FE70039617C8EC8872384A /* Pods_simple_crud_contact_jenius.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C26AD2A8F6632CE82B81C /* Pods_simple_crud_contact_jenius.framework */; };
 /* End PBXBuildFile section */
@@ -33,7 +33,7 @@
 		125AA12D24B35CB2000EE108 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		125AA13324B35CE4000EE108 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		125AA13524B35DAB000EE108 /* ContactViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewCell.swift; sourceTree = "<group>"; };
-		1276828B24C2BE1800DB55B0 /* ListViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewPresenter.swift; sourceTree = "<group>"; };
+		1276828B24C2BE1800DB55B0 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		1276828D24C2BE2900DB55B0 /* DetailViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewPresenter.swift; sourceTree = "<group>"; };
 		274C26AD2A8F6632CE82B81C /* Pods_simple_crud_contact_jenius.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simple_crud_contact_jenius.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEEAB62FC27D02BA99890A1 /* Pods-simple-crud-contact-jenius.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-crud-contact-jenius.release.xcconfig"; path = "Target Support Files/Pods-simple-crud-contact-jenius/Pods-simple-crud-contact-jenius.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 		125AA12924B35C3E000EE108 /* presenter */ = {
 			isa = PBXGroup;
 			children = (
-				1276828B24C2BE1800DB55B0 /* ListViewPresenter.swift */,
+				1276828B24C2BE1800DB55B0 /* ListViewModel.swift */,
 				1276828D24C2BE2900DB55B0 /* DetailViewPresenter.swift */,
 			);
 			path = presenter;
@@ -268,7 +268,7 @@
 				125AA12E24B35CB2000EE108 /* DetailViewController.swift in Sources */,
 				125AA13424B35CE4000EE108 /* Contact.swift in Sources */,
 				125AA13624B35DAB000EE108 /* ContactViewCell.swift in Sources */,
-				1276828C24C2BE1800DB55B0 /* ListViewPresenter.swift in Sources */,
+				1276828C24C2BE1800DB55B0 /* ListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

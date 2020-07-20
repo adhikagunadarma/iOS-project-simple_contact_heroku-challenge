@@ -8,20 +8,12 @@
 
 import Foundation
 
-class Contact {
-    var id : String = ""
-    var firstName : String = ""
-    var lastName : String = ""
-    var age : String = ""
-    var photo : String = ""
-    
-//    init(id : String , firstName : String, lastName : String, age : String, photo : String) {
-//        self.firstName  = firstName
-//        self.lastName = lastName
-//        self.id = id
-//        self.age = age
-//        self.photo = photo
-//    }
-
+struct Contact : Decodable {
+    let id : String
+    let firstName : String
+    let lastName : String
+    let age : String
+    let photo : String
+        
 }
 

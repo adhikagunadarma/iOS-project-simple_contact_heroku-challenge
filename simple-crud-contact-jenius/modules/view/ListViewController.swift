@@ -20,20 +20,21 @@ class ListViewController: UIViewController {
     @IBOutlet weak var addNewContact: UIBarButtonItem!
     @IBOutlet weak var contactTableView: UITableView!
     
-    lazy var presenter = ListContactPresenter(with: self) // init pas dipanggil aja
     private var contacts : [Contact] = []
     private let hud = JGProgressHUD()
     
+    let listContactViewModel = ListContactViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.contactTableView.delegate = self
-        self.contactTableView.dataSource = self
+//        self.contactTableView.delegate = self
+//        self.contactTableView.dataSource = self
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         // when the view controller is shown, will fetch the new data from the API ,so it will kept us updated with any changes on the API
        self.getAllContacts()
+        self.bindDataFromVM()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -47,8 +48,15 @@ class ListViewController: UIViewController {
     
     private func getAllContacts(){
         self.hud.show(in: self.view)
-        presenter.getAllContacts()
+        listContactViewModel.getAllContacts()
         
+    }
+    
+    private func bindDataFromVM(){
+        listContactViewModel.contacts.bind(to: contactTableView.rx.items(cellIdentifier: reuseIdentifier, cellType: ContactViewCell.self)){row, contact, cell in
+                   
+                   cell.nameContact.text = "\(contact.firstName) \(contact.lastName)"
+               }
     }
     
     private func presentAlert(_ messageText : String){
@@ -62,33 +70,19 @@ class ListViewController: UIViewController {
     
     
 }
-
-extension ListViewController : UITableViewDelegate, UITableViewDataSource{
-    
-    //standard tableview delegate method to be implemented
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contacts.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! ContactViewCell
-        cell.nameContact.text = "\(self.contacts[indexPath.row].firstName) \(self.contacts[indexPath.row].lastName)"
-        return cell
-    }
-    
-    
-}
-
-extension ListViewController : PresenterListView {
-    func updateUI(_ contacts : [Contact]) {
-        self.contacts = contacts
-        self.hud.dismiss()
-        self.contactTableView.reloadData()
-    }
-    
-    func showError() {
-        self.presentAlert("Something goes wrong..")
-    }
-    
-    
-}
+//
+//extension ListViewController : UITableViewDelegate, UITableViewDataSource{
+//
+//    //standard tableview delegate method to be implemented
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return contacts.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! ContactViewCell
+//        cell.nameContact.text = "\(self.contacts[indexPath.row].firstName) \(self.contacts[indexPath.row].lastName)"
+//        return cell
+//    }
+//
+//
+//}

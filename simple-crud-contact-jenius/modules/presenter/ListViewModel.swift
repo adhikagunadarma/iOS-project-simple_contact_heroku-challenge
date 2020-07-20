@@ -9,20 +9,14 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import RxSwift
+import RxCocoa
 
-protocol PresenterListView : class {
-    func updateUI(_ contacts : [Contact])
-    func showError()
-}
 
-class ListContactPresenter{
-    weak var view: PresenterListView?
-    
+class ListContactViewModel{
+    var contacts = BehaviorRelay<[Contact]>(value: [])
     private let baseURL = "https://simple-contact-crud.herokuapp.com"
     
-    init(with view: PresenterListView) {
-        self.view = view
-    }
     
     func getAllContacts(){
         var contacts : [Contact] = []
@@ -34,7 +28,6 @@ class ListContactPresenter{
                 guard let listDataJSON = resultJSON["data"].array else{
                     return
                 }
-                
                 for data in listDataJSON {
                     let contact = Contact()
                     contact.firstName = data["firstName"].stringValue
@@ -42,12 +35,12 @@ class ListContactPresenter{
                     contact.id = data["id"].stringValue
                     contact.age = data["age"].stringValue
                     contact.photo = data["photo"].stringValue
-                    
                     contacts.append(contact)
                 }
-                self.view?.updateUI(contacts)
+                self.contacts.accept(contacts)
+//                self.view?.updateUI(contacts)
             }else{
-                self.view?.showError()
+//                self.view?.showError()
             }
         }
     }
