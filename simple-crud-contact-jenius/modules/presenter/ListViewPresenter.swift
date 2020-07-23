@@ -12,7 +12,7 @@ import SwiftyJSON
 
 protocol PresenterListView : class {
     func updateUI(_ contacts : [Contact])
-    func showError()
+    func showError(_ message : String)
 }
 
 class ListContactPresenter{
@@ -25,30 +25,31 @@ class ListContactPresenter{
     }
     
     func getAllContacts(){
-        var contacts : [Contact] = []
-        Alamofire.request(self.baseURL + "/contact", method: .get).responseJSON { (response) in
+        Alamofire.request(self.baseURL + "/contact", method: .get).responseData { (response) in
             
-            if (response.response?.statusCode == 200){
-                // fetch and convert the response into JSON
-                let resultJSON : JSON = JSON(response.result.value!)
-                guard let listDataJSON = resultJSON["data"].array else{
-                    return
+            switch (response.result){
+            case .success(let data) :
+                do{
+                    let contactsData = try JSONDecoder().decode(ListContact.self, from: data)
+                    
+                    let contacts = contactsData.data
+                    self.view?.updateUI(contacts)
+                }catch let error{
+                    print(error)
+
+                    self.view?.showError("")
                 }
                 
-                for data in listDataJSON {
-                    let contact = Contact()
-                    contact.firstName = data["firstName"].stringValue
-                    contact.lastName = data["lastName"].stringValue
-                    contact.id = data["id"].stringValue
-                    contact.age = data["age"].stringValue
-                    contact.photo = data["photo"].stringValue
-                    
-                    contacts.append(contact)
-                }
-                self.view?.updateUI(contacts)
-            }else{
-                self.view?.showError()
+                break
+                
+                
+            case .failure(let error) :
+                
+                self.view?.showError(error.localizedDescription)
+                break
+                
             }
+            
         }
     }
 }

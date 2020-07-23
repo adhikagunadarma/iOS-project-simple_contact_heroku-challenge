@@ -41,7 +41,11 @@ class ListViewController: UIViewController {
         let destVC : DetailViewController = segue.destination as! DetailViewController
         if (segue.identifier == "goToDetailWithParams"){
             let selectedRow = contactTableView.indexPathForSelectedRow!.row
-            destVC.id_contact = self.contacts[selectedRow].id
+            guard let idContact = self.contacts[selectedRow].id else{
+                return self.presentAlert("Error, Id not found..")
+            }
+            
+            destVC.id_contact = idContact
         }
     }
     
@@ -72,7 +76,7 @@ extension ListViewController : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! ContactViewCell
-        cell.nameContact.text = "\(self.contacts[indexPath.row].firstName) \(self.contacts[indexPath.row].lastName)"
+        cell.nameContact.text = "\(self.contacts[indexPath.row].firstName ?? "") \(self.contacts[indexPath.row].lastName ?? "")"
         return cell
     }
     
@@ -86,8 +90,8 @@ extension ListViewController : PresenterListView {
         self.contactTableView.reloadData()
     }
     
-    func showError() {
-        self.presentAlert("Something goes wrong..")
+    func showError(_ message : String) {
+        message == "" ? self.presentAlert("Something goes wrong..") : self.presentAlert(message)
     }
     
     

@@ -15,7 +15,6 @@ import SDWebImage
 class DetailViewController: UIViewController {
     
     internal var id_contact : String = ""
-    private var contact = Contact()
     private let hud = JGProgressHUD()
     lazy var presenter = DetailContactPresenter(with: self) // init pas dipanggil aja
     
@@ -38,8 +37,8 @@ class DetailViewController: UIViewController {
     
     // function to submit the data contact, whether it is add a new one or edit an existing one, depends on the contact id passed to the page
     @IBAction func onSubmit(_ sender: Any) {
-        let contact = Contact()
-        contact.age = self.contactAge.text ?? ""
+        var contact = Contact()
+        contact.age = Int(self.contactAge.text ?? "0")
         contact.firstName = self.contactFirst.text ?? ""
         contact.lastName = self.contactLast.text ?? ""
         self.hud.show(in : self.view)
@@ -71,17 +70,24 @@ class DetailViewController: UIViewController {
 }
 
 extension DetailViewController : PresenterDetailView{
+  
+    
     func updateUI(_ contact : Contact){
          // update the UI accordingly
         
          self.hud.dismiss()
-         self.contactFirst.text = contact.firstName
-         self.contactLast.text = contact.lastName
-         self.contactAge.text = contact.age
-         
-         if (contact.photo != "N/A"){
+         self.contactFirst.text = contact.firstName ?? ""
+         self.contactLast.text = contact.lastName ?? ""
+        
+        if let contactAge = contact.age{
+            self.contactAge.text = "\(contactAge)"
+        }
+        
+        guard let contactPhoto = contact.photo else { return self.presentAlert("Photo is not initialized")}
+        
+         if (contactPhoto != "N/A"){
              self.contactPhoto.sd_imageIndicator = SDWebImageActivityIndicator.gray
-             self.contactPhoto.sd_setImage(with: URL(string: contact.photo), placeholderImage: nil)
+             self.contactPhoto.sd_setImage(with: URL(string: contactPhoto), placeholderImage: nil)
          }else{
              self.contactPhoto.image = UIImage(named: "noimageavailable")
          }
@@ -95,9 +101,8 @@ extension DetailViewController : PresenterDetailView{
         self.hud.dismiss()
     }
     
-    func showError() {
-        self.presentAlert("Something goes wrong")
-        self.hud.dismiss()
+    func showError(_ message : String) {
+        message == "" ? self.presentAlert("Something goes wrong..") : self.presentAlert(message)
     }
     
     
