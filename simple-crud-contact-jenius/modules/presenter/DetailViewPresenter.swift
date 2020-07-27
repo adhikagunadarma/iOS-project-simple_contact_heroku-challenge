@@ -32,14 +32,20 @@ class DetailContactPresenter{
             
             switch (response.result){
             case .success(let data) :
-                guard let contactData = try? JSONDecoder().decode(DetailContact.self, from: data) else {
-                  
-                  self.view?.showError("")
-                  return
+                if (response.response?.statusCode == 200){
+                    guard let contactData = try? JSONDecoder().decode(DetailContact.self, from: data) else {
+                        
+                        self.view?.showError("")
+                        return
+                    }
+                    
+                    let contact = contactData.data
+                    self.view?.updateUI(contact)
+                }
+                else{
+                    self.view?.showError("status code is not 200")
                 }
                 
-                let contact = contactData.data
-                self.view?.updateUI(contact)
                 break
                 
                 
@@ -49,72 +55,120 @@ class DetailContactPresenter{
                 break
                 
             }
-
+            
         }
     }
     
     func addContact(_ model : Contact) {
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
-
+        
         do {
-            let contactJSON = try encoder.encode(model)
-
-            if let jsonString = String(data: contactJSON, encoding: .utf8) {
-                Alamofire.request(self.baseURL + "/contact",
-                                  method: .post,
-                                  parameters: model,
-                                  encoding: JSONEncoding.default).responseJSON { (response) in
-                                
-                                    if (response.response?.statusCode == 201){
-                                
-                                        let resultJSON : JSON = JSON(response.result.value!)
-                                        self.view?.showSuccess(resultJSON["message"].stringValue)
-                                    }else{
-                                        self.view?.showError("")
-                                    }
-                                    
+            let contactEncoded = try encoder.encode(model)
+            let addUrl = "\(self.baseURL)/contact"
+            
+            var request = URLRequest(url: URL(string: addUrl)!)
+            request.httpMethod = HTTPMethod.post.rawValue
+            request.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
+            request.httpBody = contactEncoded
+            
+            Alamofire.request(request).responseData { (response) in
+                
+                
+                switch (response.result){
+                case .success(let data) :
+                    if response.response?.statusCode == 201 {
+                        guard let response = try? JSONDecoder().decode(ResponseAPI.self, from: data) else {
+                            self.view?.showError("")
+                            return
+                        }
+                        let message = response.message
+                        self.view?.showSuccess(message)
+                    }else{
+                        self.view?.showError("Status code is not 201")
+                    }
+                    break
+                case .failure(let error) :
+                    self.view?.showError(error.localizedDescription)
+                    break
                 }
             }
         } catch {
-            print(error.localizedDescription)
+            self.view?.showError(error.localizedDescription)
         }
-        
-        
     }
     
     func editContact(_ model : Contact, _ id : String) {
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
         
-        
-        Alamofire.request(self.baseURL + "/contact/\(id)",
-            method: .put,
-            parameters: self.toJSON(model).dictionaryObject,
-            encoding: JSONEncoding.default).responseJSON { (response) in
+        do {
+            let contactEncoded = try encoder.encode(model)
+            let addUrl = "\(self.baseURL)/contact/\(id)"
+            
+            var request = URLRequest(url: URL(string: addUrl)!)
+            request.httpMethod = HTTPMethod.put.rawValue
+            request.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
+            request.httpBody = contactEncoded
+            
+            Alamofire.request(request).responseData { (response) in
                 
-                if (response.response?.statusCode == 201){
-                    
-                    let resultJSON : JSON = JSON(response.result.value!)
-                    self.view?.showSuccess(resultJSON["message"].stringValue)
+                
+                switch (response.result){
+                case .success(let data) :
+                    if response.response?.statusCode == 201 {
+                        guard let response = try? JSONDecoder().decode(ResponseAPI.self, from: data) else {
+                            self.view?.showError("")
+                            return
+                        }
+                        let message = response.message
+                        self.view?.showSuccess(message)
+                    }else{
+                        self.view?.showError("Status code is not 201")
+                    }
+                    break
+                case .failure(let error) :
+                    self.view?.showError(error.localizedDescription)
+                    break
                 }
-                else{
-                    self.view?.showError("")
-                }
+            }
+        } catch {
+            self.view?.showError(error.localizedDescription)
         }
     }
     
     func deleteContact(_ id : String){
         
+        let addUrl = "\(self.baseURL)/contact/\(id)"
         
-        Alamofire.request(self.baseURL + "/contact/\(id)",
-            method: .delete).responseJSON { (response) in
-                if (response.response?.statusCode == 201){
+        var request = URLRequest(url: URL(string: addUrl)!)
+        request.httpMethod = HTTPMethod.delete.rawValue
+        request.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
+        
+        
+        Alamofire.request(request).responseData { (response) in
+            
+            
+            switch (response.result){
+            case .success(let data) :
+                if response.response?.statusCode == 201 {
                     
-                    let resultJSON : JSON = JSON(response.result.value!)
-                    self.view?.showSuccess(resultJSON["message"].stringValue)
+                    guard let response = try? JSONDecoder().decode(ResponseAPI.self, from: data) else {
+                        self.view?.showError("")
+                        return
+                    }
+                    let message = response.message
+                    self.view?.showSuccess(message)
+                }else{
+                    self.view?.showError("Status code is not 201")
                 }
-                else{
-                    self.view?.showError("")
-                }
+                break
+            case .failure(let error) :
+                self.view?.showError(error.localizedDescription)
+                break
+            }
         }
+        
     }
 }
+

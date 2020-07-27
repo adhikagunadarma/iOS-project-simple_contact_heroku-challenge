@@ -103,6 +103,8 @@ extension DetailViewController : PresenterDetailView{
     
     func showError(_ message : String) {
         message == "" ? self.presentAlert("Something goes wrong..") : self.presentAlert(message)
+
+        self.hud.dismiss()
     }
     
     

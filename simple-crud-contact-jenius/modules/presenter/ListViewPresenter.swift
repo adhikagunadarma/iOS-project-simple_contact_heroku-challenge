@@ -29,15 +29,18 @@ class ListContactPresenter{
             
             switch (response.result){
             case .success(let data) :
-                do{
-                    let contactsData = try JSONDecoder().decode(ListContact.self, from: data)
+                if (response.response?.statusCode == 200){
+                    guard let contactData = try? JSONDecoder().decode(ListContact.self, from: data) else {
+                        
+                        self.view?.showError("")
+                        return
+                    }
                     
-                    let contacts = contactsData.data
+                    let contacts = contactData.data
                     self.view?.updateUI(contacts)
-                }catch let error{
-                    print(error)
-
-                    self.view?.showError("")
+                }
+                else{
+                    self.view?.showError("status code is not 200")
                 }
                 
                 break

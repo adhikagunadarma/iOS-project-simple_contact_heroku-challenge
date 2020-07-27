@@ -8,6 +8,10 @@
 
 import Foundation
 
+struct ResponseAPI : Codable{
+    let message : String
+}
+
 struct ListContact: Codable {
     let message : String
     let data: [Contact]
