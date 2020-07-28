@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 protocol PresenterListView : class {
-    func updateUI(_ contacts : [Contact])
+    func updateUI(_ contacts : [ContactViewModel])
     func showError(_ message : String)
 }
 
@@ -36,8 +36,11 @@ class ListContactPresenter{
                         return
                     }
                     
-                    let contacts = contactData.data
-                    self.view?.updateUI(contacts)
+                    let contacts : [Contact] = contactData.data
+                    let contactsViewModel : [ContactViewModel] = contacts.map({
+                        return ContactViewModel(dataModel: $0)
+                    })
+                    self.view?.updateUI(contactsViewModel)
                 }
                 else{
                     self.view?.showError("status code is not 200")

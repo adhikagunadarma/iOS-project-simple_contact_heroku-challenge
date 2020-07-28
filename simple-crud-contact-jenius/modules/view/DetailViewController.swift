@@ -37,16 +37,18 @@ class DetailViewController: UIViewController {
     
     // function to submit the data contact, whether it is add a new one or edit an existing one, depends on the contact id passed to the page
     @IBAction func onSubmit(_ sender: Any) {
-        var contact = Contact()
-        contact.age = Int(self.contactAge.text ?? "0")
-        contact.firstName = self.contactFirst.text ?? ""
-        contact.lastName = self.contactLast.text ?? ""
+        
         self.hud.show(in : self.view)
+        
+        let age = Int(self.contactAge.text ?? "") ?? 0
+        let firstName = self.contactFirst.text ?? ""
+        let lastName = self.contactLast.text ?? ""
+        let photo = self.contactPhoto.sd_imageURL?.absoluteString ?? "N/A"
+        
         if (self.id_contact != ""){ // edit
-            contact.photo = self.contactPhoto.sd_imageURL?.absoluteString ?? "N/A"
-            presenter.editContact(contact,self.id_contact)
+            presenter.editContact(age, firstName, lastName, photo ,self.id_contact)
         }else{ // add new
-            presenter.addContact(contact)
+            presenter.addContact(age, firstName, lastName, photo)
         }
     }
     
@@ -54,56 +56,39 @@ class DetailViewController: UIViewController {
     private func setupData(){
         if (id_contact != ""){
             self.hud.show(in: self.view)
-            presenter.getContact(id_contact)
+            presenter.getContact(self.id_contact)
         }else{
             self.navigationItem.rightBarButtonItem = nil
         }
     }
     
-    private func presentAlert(_ messageText : String){
-        // api call function to presen alert popup
-        let alert = UIAlertController(title: "", message: messageText, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
 }
 
 extension DetailViewController : PresenterDetailView{
-  
     
-    func updateUI(_ contact : Contact){
-         // update the UI accordingly
-        
-         self.hud.dismiss()
-         self.contactFirst.text = contact.firstName ?? ""
-         self.contactLast.text = contact.lastName ?? ""
-        
-        if let contactAge = contact.age{
-            self.contactAge.text = "\(contactAge)"
+    
+    func updateUI(_ contactVM : ContactViewModel){
+        self.hud.dismiss()
+        self.contactFirst.text = contactVM.firstName
+        self.contactLast.text = contactVM.lastName
+        self.contactAge.text = contactVM.age
+        if (!contactVM.noPhoto){
+            self.contactPhoto.sd_imageIndicator = SDWebImageActivityIndicator.gray
+            self.contactPhoto.sd_setImage(with: URL(string: contactVM.photo), placeholderImage: nil)
+        }else{
+            self.contactPhoto.image = UIImage(named: "noimageavailable")
         }
-        
-        guard let contactPhoto = contact.photo else { return self.presentAlert("Photo is not initialized")}
-        
-         if (contactPhoto != "N/A"){
-             self.contactPhoto.sd_imageIndicator = SDWebImageActivityIndicator.gray
-             self.contactPhoto.sd_setImage(with: URL(string: contactPhoto), placeholderImage: nil)
-         }else{
-             self.contactPhoto.image = UIImage(named: "noimageavailable")
-         }
-         
-         
-     }
+    }
     
     func showSuccess(_ message : String) {
-        // kalo berhasil hit api, entah querynya berhasil ato engga
-        self.presentAlert(message)
+        let alert = Utils.presentAlert(message)
+        self.present(alert, animated: true, completion: nil)
         self.hud.dismiss()
     }
     
     func showError(_ message : String) {
-        message == "" ? self.presentAlert("Something goes wrong..") : self.presentAlert(message)
-
+        let alert = message == "" ? Utils.presentAlert("Something goes wrong..") : Utils.presentAlert(message)
+        self.present(alert, animated: true, completion: nil)
         self.hud.dismiss()
     }
     

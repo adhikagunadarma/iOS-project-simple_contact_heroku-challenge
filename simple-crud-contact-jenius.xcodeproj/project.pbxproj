@@ -14,10 +14,12 @@
 		125AA12024B35A8B000EE108 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125AA11E24B35A8B000EE108 /* LaunchScreen.storyboard */; };
 		125AA12C24B35C85000EE108 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125AA12B24B35C85000EE108 /* ListViewController.swift */; };
 		125AA12E24B35CB2000EE108 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125AA12D24B35CB2000EE108 /* DetailViewController.swift */; };
-		125AA13424B35CE4000EE108 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125AA13324B35CE4000EE108 /* Contact.swift */; };
+		125AA13424B35CE4000EE108 /* ContactDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125AA13324B35CE4000EE108 /* ContactDataModel.swift */; };
 		125AA13624B35DAB000EE108 /* ContactViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125AA13524B35DAB000EE108 /* ContactViewCell.swift */; };
 		1276828C24C2BE1800DB55B0 /* ListViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1276828B24C2BE1800DB55B0 /* ListViewPresenter.swift */; };
 		1276828E24C2BE2900DB55B0 /* DetailViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1276828D24C2BE2900DB55B0 /* DetailViewPresenter.swift */; };
+		12ED2CF424CEDC2400A630B2 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ED2CF324CEDC2400A630B2 /* ContactViewModel.swift */; };
+		12ED2CF724CFFD6000A630B2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ED2CF624CFFD6000A630B2 /* Utils.swift */; };
 		B5FE70039617C8EC8872384A /* Pods_simple_crud_contact_jenius.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C26AD2A8F6632CE82B81C /* Pods_simple_crud_contact_jenius.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,10 +33,12 @@
 		125AA12124B35A8B000EE108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		125AA12B24B35C85000EE108 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		125AA12D24B35CB2000EE108 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		125AA13324B35CE4000EE108 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		125AA13324B35CE4000EE108 /* ContactDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataModel.swift; sourceTree = "<group>"; };
 		125AA13524B35DAB000EE108 /* ContactViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewCell.swift; sourceTree = "<group>"; };
 		1276828B24C2BE1800DB55B0 /* ListViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewPresenter.swift; sourceTree = "<group>"; };
 		1276828D24C2BE2900DB55B0 /* DetailViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewPresenter.swift; sourceTree = "<group>"; };
+		12ED2CF324CEDC2400A630B2 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
+		12ED2CF624CFFD6000A630B2 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		274C26AD2A8F6632CE82B81C /* Pods_simple_crud_contact_jenius.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simple_crud_contact_jenius.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEEAB62FC27D02BA99890A1 /* Pods-simple-crud-contact-jenius.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-crud-contact-jenius.release.xcconfig"; path = "Target Support Files/Pods-simple-crud-contact-jenius/Pods-simple-crud-contact-jenius.release.xcconfig"; sourceTree = "<group>"; };
 		D8F277FEFA7B33AEEB171F77 /* Pods-simple-crud-contact-jenius.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-crud-contact-jenius.debug.xcconfig"; path = "Target Support Files/Pods-simple-crud-contact-jenius/Pods-simple-crud-contact-jenius.debug.xcconfig"; sourceTree = "<group>"; };
@@ -83,7 +87,8 @@
 		125AA12724B35C2C000EE108 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				125AA13324B35CE4000EE108 /* Contact.swift */,
+				125AA13324B35CE4000EE108 /* ContactDataModel.swift */,
+				12ED2CF324CEDC2400A630B2 /* ContactViewModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 			children = (
 				125AA11324B35A88000EE108 /* AppDelegate.swift */,
 				125AA11524B35A88000EE108 /* SceneDelegate.swift */,
+				12ED2CF524CFFD4800A630B2 /* utils */,
 				1276828824C2BD8000DB55B0 /* ui */,
 				125AA12924B35C3E000EE108 /* presenter */,
 				125AA12824B35C37000EE108 /* view */,
@@ -127,6 +133,14 @@
 				125AA11924B35A88000EE108 /* Main.storyboard */,
 			);
 			path = ui;
+			sourceTree = "<group>";
+		};
+		12ED2CF524CFFD4800A630B2 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				12ED2CF624CFFD6000A630B2 /* Utils.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		789B8D1C19EEA92FE702765A /* Frameworks */ = {
@@ -266,8 +280,10 @@
 				1276828E24C2BE2900DB55B0 /* DetailViewPresenter.swift in Sources */,
 				125AA12C24B35C85000EE108 /* ListViewController.swift in Sources */,
 				125AA12E24B35CB2000EE108 /* DetailViewController.swift in Sources */,
-				125AA13424B35CE4000EE108 /* Contact.swift in Sources */,
+				12ED2CF724CFFD6000A630B2 /* Utils.swift in Sources */,
+				125AA13424B35CE4000EE108 /* ContactDataModel.swift in Sources */,
 				125AA13624B35DAB000EE108 /* ContactViewCell.swift in Sources */,
+				12ED2CF424CEDC2400A630B2 /* ContactViewModel.swift in Sources */,
 				1276828C24C2BE1800DB55B0 /* ListViewPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

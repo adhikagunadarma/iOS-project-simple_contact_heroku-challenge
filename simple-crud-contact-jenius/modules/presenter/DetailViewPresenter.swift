@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 protocol PresenterDetailView : class {
-    func updateUI(_ contact : Contact)
+    func updateUI(_ contact : ContactViewModel)
     func showSuccess(_ message : String)
     func showError(_ message : String)
 }
@@ -39,8 +39,9 @@ class DetailContactPresenter{
                         return
                     }
                     
-                    let contact = contactData.data
-                    self.view?.updateUI(contact)
+                    let contactVM : ContactViewModel = ContactViewModel(dataModel: contactData.data)
+                    
+                    self.view?.updateUI(contactVM)
                 }
                 else{
                     self.view?.showError("status code is not 200")
@@ -59,12 +60,19 @@ class DetailContactPresenter{
         }
     }
     
-    func addContact(_ model : Contact) {
+    func addContact(_ age : Int, _ firstName : String, _ lastName : String, _ photo : String) {
+        
+        var contact = Contact()
+        contact.age = age
+        contact.firstName = firstName
+        contact.lastName = lastName
+        contact.photo = photo
+        
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
         
         do {
-            let contactEncoded = try encoder.encode(model)
+            let contactEncoded = try encoder.encode(contact)
             let addUrl = "\(self.baseURL)/contact"
             
             var request = URLRequest(url: URL(string: addUrl)!)
@@ -98,12 +106,19 @@ class DetailContactPresenter{
         }
     }
     
-    func editContact(_ model : Contact, _ id : String) {
+    func editContact(_ age : Int, _ firstName : String, _ lastName : String, _ photo : String, _ id : String) {
+        
+        var contact = Contact()
+        contact.age = age
+        contact.firstName = firstName
+        contact.lastName = lastName
+        contact.photo = photo
+        
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
         
         do {
-            let contactEncoded = try encoder.encode(model)
+            let contactEncoded = try encoder.encode(contact)
             let addUrl = "\(self.baseURL)/contact/\(id)"
             
             var request = URLRequest(url: URL(string: addUrl)!)
