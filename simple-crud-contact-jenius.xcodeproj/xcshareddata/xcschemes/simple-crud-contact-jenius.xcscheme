@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "12ED2CFB24D0467700A630B2"
+               BuildableName = "simple-crud-contact-jeniusTests.xctest"
+               BlueprintName = "simple-crud-contact-jeniusTests"
+               ReferencedContainer = "container:simple-crud-contact-jenius.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

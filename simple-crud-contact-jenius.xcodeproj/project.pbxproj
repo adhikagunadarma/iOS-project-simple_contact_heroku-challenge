@@ -20,8 +20,19 @@
 		1276828E24C2BE2900DB55B0 /* DetailViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1276828D24C2BE2900DB55B0 /* DetailViewPresenter.swift */; };
 		12ED2CF424CEDC2400A630B2 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ED2CF324CEDC2400A630B2 /* ContactViewModel.swift */; };
 		12ED2CF724CFFD6000A630B2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ED2CF624CFFD6000A630B2 /* Utils.swift */; };
+		12ED2CFF24D0467700A630B2 /* simple_crud_contact_jeniusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ED2CFE24D0467700A630B2 /* simple_crud_contact_jeniusTests.swift */; };
 		B5FE70039617C8EC8872384A /* Pods_simple_crud_contact_jenius.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C26AD2A8F6632CE82B81C /* Pods_simple_crud_contact_jenius.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		12ED2D0124D0467700A630B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 125AA10824B35A88000EE108 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 125AA10F24B35A88000EE108;
+			remoteInfo = "simple-crud-contact-jenius";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		125AA11024B35A88000EE108 /* simple-crud-contact-jenius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "simple-crud-contact-jenius.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +50,9 @@
 		1276828D24C2BE2900DB55B0 /* DetailViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewPresenter.swift; sourceTree = "<group>"; };
 		12ED2CF324CEDC2400A630B2 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		12ED2CF624CFFD6000A630B2 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		12ED2CFC24D0467700A630B2 /* simple-crud-contact-jeniusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "simple-crud-contact-jeniusTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		12ED2CFE24D0467700A630B2 /* simple_crud_contact_jeniusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simple_crud_contact_jeniusTests.swift; sourceTree = "<group>"; };
+		12ED2D0024D0467700A630B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		274C26AD2A8F6632CE82B81C /* Pods_simple_crud_contact_jenius.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simple_crud_contact_jenius.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEEAB62FC27D02BA99890A1 /* Pods-simple-crud-contact-jenius.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-crud-contact-jenius.release.xcconfig"; path = "Target Support Files/Pods-simple-crud-contact-jenius/Pods-simple-crud-contact-jenius.release.xcconfig"; sourceTree = "<group>"; };
 		D8F277FEFA7B33AEEB171F77 /* Pods-simple-crud-contact-jenius.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-crud-contact-jenius.debug.xcconfig"; path = "Target Support Files/Pods-simple-crud-contact-jenius/Pods-simple-crud-contact-jenius.debug.xcconfig"; sourceTree = "<group>"; };
@@ -53,6 +67,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		12ED2CF924D0467700A630B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -60,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				125AA11224B35A88000EE108 /* simple-crud-contact-jenius */,
+				12ED2CFD24D0467700A630B2 /* simple-crud-contact-jeniusTests */,
 				125AA11124B35A88000EE108 /* Products */,
 				95268D4679CC7E75C18B23F1 /* Pods */,
 				789B8D1C19EEA92FE702765A /* Frameworks */,
@@ -70,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				125AA11024B35A88000EE108 /* simple-crud-contact-jenius.app */,
+				12ED2CFC24D0467700A630B2 /* simple-crud-contact-jeniusTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,6 +166,15 @@
 			path = utils;
 			sourceTree = "<group>";
 		};
+		12ED2CFD24D0467700A630B2 /* simple-crud-contact-jeniusTests */ = {
+			isa = PBXGroup;
+			children = (
+				12ED2CFE24D0467700A630B2 /* simple_crud_contact_jeniusTests.swift */,
+				12ED2D0024D0467700A630B2 /* Info.plist */,
+			);
+			path = "simple-crud-contact-jeniusTests";
+			sourceTree = "<group>";
+		};
 		789B8D1C19EEA92FE702765A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +214,24 @@
 			productReference = 125AA11024B35A88000EE108 /* simple-crud-contact-jenius.app */;
 			productType = "com.apple.product-type.application";
 		};
+		12ED2CFB24D0467700A630B2 /* simple-crud-contact-jeniusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12ED2D0524D0467700A630B2 /* Build configuration list for PBXNativeTarget "simple-crud-contact-jeniusTests" */;
+			buildPhases = (
+				12ED2CF824D0467700A630B2 /* Sources */,
+				12ED2CF924D0467700A630B2 /* Frameworks */,
+				12ED2CFA24D0467700A630B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				12ED2D0224D0467700A630B2 /* PBXTargetDependency */,
+			);
+			name = "simple-crud-contact-jeniusTests";
+			productName = "simple-crud-contact-jeniusTests";
+			productReference = 12ED2CFC24D0467700A630B2 /* simple-crud-contact-jeniusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -194,6 +244,10 @@
 				TargetAttributes = {
 					125AA10F24B35A88000EE108 = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					12ED2CFB24D0467700A630B2 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 125AA10F24B35A88000EE108;
 					};
 				};
 			};
@@ -211,6 +265,7 @@
 			projectRoot = "";
 			targets = (
 				125AA10F24B35A88000EE108 /* simple-crud-contact-jenius */,
+				12ED2CFB24D0467700A630B2 /* simple-crud-contact-jeniusTests */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +278,13 @@
 				125AA12024B35A8B000EE108 /* LaunchScreen.storyboard in Resources */,
 				125AA11D24B35A8B000EE108 /* Assets.xcassets in Resources */,
 				125AA11B24B35A88000EE108 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12ED2CFA24D0467700A630B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +350,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		12ED2CF824D0467700A630B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12ED2CFF24D0467700A630B2 /* simple_crud_contact_jeniusTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		12ED2D0224D0467700A630B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 125AA10F24B35A88000EE108 /* simple-crud-contact-jenius */;
+			targetProxy = 12ED2D0124D0467700A630B2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		125AA11924B35A88000EE108 /* Main.storyboard */ = {
@@ -462,6 +540,44 @@
 			};
 			name = Release;
 		};
+		12ED2D0324D0467700A630B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "simple-crud-contact-jeniusTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "adhikagunadarma.example.contactheroku.simple-crud-contact-jeniusTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/simple-crud-contact-jenius.app/simple-crud-contact-jenius";
+			};
+			name = Debug;
+		};
+		12ED2D0424D0467700A630B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "simple-crud-contact-jeniusTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "adhikagunadarma.example.contactheroku.simple-crud-contact-jeniusTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/simple-crud-contact-jenius.app/simple-crud-contact-jenius";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -479,6 +595,15 @@
 			buildConfigurations = (
 				125AA12524B35A8B000EE108 /* Debug */,
 				125AA12624B35A8B000EE108 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12ED2D0524D0467700A630B2 /* Build configuration list for PBXNativeTarget "simple-crud-contact-jeniusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12ED2D0324D0467700A630B2 /* Debug */,
+				12ED2D0424D0467700A630B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
