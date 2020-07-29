@@ -23,16 +23,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DC38A559-29D1-44CB-887E-22334CD7D7CD"
+            uuid = "2A33592A-5851-4022-AD36-9EFA8CBE1B8F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "simple-crud-contact-jeniusTests/simple_crud_contact_jeniusTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "testContactViewModelWithoutPhoto()"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "testPresentAlert()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
